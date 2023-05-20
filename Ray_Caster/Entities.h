@@ -46,9 +46,10 @@ public:
 	~Entity();
 
 private:
-	//Create a map of attributes (accesible with an element of Attribute_enum
-	std::map<int, Attribute*> signature;
-	std::map<int, Attribute*>::iterator iter = signature.begin();
+	//Create a map of attributes (accesible with an element of Attribute_enum)
+	std::map<Attribute_enum, Attribute*> signature;
+	//Declaring an iterator to use on the signature
+	std::map<Attribute_enum, Attribute*>::iterator iter;
 };
 
 Entity::Entity(int flags)
@@ -62,13 +63,17 @@ Entity::Entity(int flags)
 	if (flags & Attribute_enum::Sprite) {
 		Spr spr;
 	}
+
+	//Initialising the interator after the map is populated
+	iter = signature.begin();
 }
 
 Entity::~Entity()
 {
+	//Freeing the memory occupied by attributes in the signature
 	while (iter != signature.end())
 	{
-		delete iter->first;
+		delete this->iter->second;
 		iter++;
 	}
 }
