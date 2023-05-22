@@ -33,7 +33,7 @@
 
 
 enum Attribute_enum {
-	Movment = 1u << 0,
+	Movement = 1u << 0,
 	Physics = 1u << 1,
 	Sprite = 1u << 2,
 	Collision = 1u << 3
@@ -54,8 +54,8 @@ private:
 
 Entity::Entity(int flags)
 {
-	if (flags & Attribute_enum::Movment) {
-		signature[Attribute_enum::Movment] = new Mov;
+	if (flags & Attribute_enum::Movement) {
+		signature[Attribute_enum::Movement] = new Mov;
 	}
 	if (flags & Attribute_enum::Physics) {
 		Phy phy;

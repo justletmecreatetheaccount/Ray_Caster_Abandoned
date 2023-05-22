@@ -2,6 +2,7 @@
 #include<SFML/Graphics.hpp>
 struct Attribute
 {
+	//Template empty class, nothing to see here
 };
 
 struct Mov : public Attribute
@@ -19,7 +20,7 @@ struct Mov : public Attribute
 
 struct Phy : public Mov
 {
-	//Same as mother but with an advanced moveset
+	//Same as mother class but with an advanced moveset
 	//Struct variables
 	sf::Vector2i speed = { 0, 0 };
 	sf::Vector2i acceleration = { 0, 0 };
