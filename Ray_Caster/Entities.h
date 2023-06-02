@@ -2,78 +2,48 @@
 #include "Attributes.h"
 #include <string>
 #include <map>
+#include <vector>
+#include <typeinfo>
+#include <memory>
 
-// Definition of the different flags to tell if an entity has a certain charateristic or not
-// Workings : Define bytes and add with "|" then compare with "&" 
+class Entity {
+private :
+	int ID = 999;
+	std::vector<Attribute*> Signiature;
 
-/* Example :
-* 
-*  void fnct (Attribute flag):
-*  if (flag & Attribute::Movable):
-*     ...DOES SOMETHING...
-*  
-*########################################
-* 
-* Call with fnct(Attribute::Movable | Attribute::Health)
-* we will have flags equals :
-* 
-*   0000 0001
-* + 0000 0010
-* -----------
-*   0000 0011
-* 
-* Then in the function the check is:
-* 
-*     0000 0001
-* AND 0000 0011
-* -------------
-*     0000 0001
-* >>> Is different from 0 so signals True
-*/
-
-
-enum Attribute_enum {
-	Movement = 1u << 0,
-	Physics = 1u << 1,
-	Sprite = 1u << 2,
-	Collision = 1u << 3
-};
-
-class Entity
-{
 public:
-	Entity(int flags);
-	~Entity();
+	const int& get_id() const {
+		return ID;
+	}
 
-private:
-	//Create a map of attributes (accesible with an element of Attribute_enum)
-	std::map<Attribute_enum, Attribute*> signature;
-	//Declaring an iterator to use on the signature
-	std::map<Attribute_enum, Attribute*>::iterator iter;
+	const std::vector<Attribute*>& get_signature() const {
+		return Signiature;
+	}
+
+	template<typename T>
+	void add_attribute() {
+		Signiature.emplace_back(new T);
+		std::cout << "think of a" << typeid(*(*Signiature.begin())).name() << " " << typeid(T).name() << "\n";
+	}
+
+	template<typename T>
+	T& get_attribute() {
+		for (Attribute* i : this->Signiature) {
+			if (typeid(T) == typeid(*i)) {
+				return dynamic_cast<T&>(*i);
+			}
+		}
+	}
+
 };
 
-Entity::Entity(int flags)
-{
-	if (flags & Attribute_enum::Movement) {
-		signature[Attribute_enum::Movement] = new Mov;
-	}
-	if (flags & Attribute_enum::Physics) {
-		Phy phy;
-	}
-	if (flags & Attribute_enum::Sprite) {
-		Spr spr;
+
+std::ostream& operator<<(std::ostream& stream, const Entity& entity) {
+	stream << entity.get_id() << " : ";
+	for (Attribute* i : entity.get_signature()) {
+		stream << *i;
 	}
 
-	//Initialising the interator after the map is populated
-	iter = signature.begin();
-}
-
-Entity::~Entity()
-{
-	//Freeing the memory occupied by attributes in the signature
-	while (iter != signature.end())
-	{
-		delete this->iter->second;
-		iter++;
-	}
+	stream << "\n";
+	return stream;
 }

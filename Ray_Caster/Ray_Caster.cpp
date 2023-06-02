@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
+#include "Attributes.h"
 #include "Entities.h"
 
+/*
 int main()
 {
     //Window settings definition
@@ -34,6 +36,15 @@ int main()
     }
 
     return 0;
+}
+*/
+int main() {
+    Entity Player;
+    Player.add_attribute<Vertex>();
+    std::cout << Player;
+    Player.get_attribute<Vertex>().log_position();
+
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

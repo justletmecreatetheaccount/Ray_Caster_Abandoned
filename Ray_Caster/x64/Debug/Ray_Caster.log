@@ -1,2 +1,3 @@
 ﻿  Ray_Caster.cpp
+C:\C++\C++_VS_Projects\Ray_Caster\Ray_Caster\Entities.h(36): warning C4715: 'Entity::get_attribute<Vertex>': not all control paths return a value
   Ray_Caster.vcxproj -> C:\C++\C++_VS_Projects\Ray_Caster\x64\Debug\Ray_Caster.exe
