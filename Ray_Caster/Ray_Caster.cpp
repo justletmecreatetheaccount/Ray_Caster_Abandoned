@@ -1,8 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include "Attributes.h"
 #include "Entities.h"
+#include<SFML/System/Clock.hpp>
 
-/*
 int main()
 {
     //Window settings definition
@@ -11,13 +11,18 @@ int main()
 
     //Window creation
     sf::RenderWindow window(sf::VideoMode(1000, 600), "SFML works!", sf::Style::Default, settings_main);
-    
+
+    sf::Clock clock;
 
     //Test player creations
-    Entity Player (Attribute::Physics | Attribute::Sprite );
-    Player.spr;
-    sf::CircleShape shape(25.f, 3);
-    shape.setFillColor(sf::Color::Green);
+    Entity Player;
+    int mov_spd = 10000;
+    Player.addAttribute<Vertex>();
+    Player.addAttribute<Physics>();
+    Player.addAttribute<C_Shape>();
+    Player.getAttribute<C_Shape>().giveShape(new sf::CircleShape(25.f, 3));
+    Player.getAttribute<C_Shape>().getShape().setFillColor(sf::Color::Green);
+    Player.getAttribute<C_Shape>().linkVertex(&Player.getAttribute<Vertex>());
 
     //Main loop
     while (window.isOpen())
@@ -26,25 +31,45 @@ int main()
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
+            switch (event.type) {
+            case sf::Event::Closed :
                 window.close();
+                break;
+            }
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
+                Player.getAttribute<Physics>().forces += sf::Vector2f(0, -mov_spd);
+            }
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+                Player.getAttribute<Physics>().forces += sf::Vector2f(0, mov_spd);
+            }
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
+                Player.getAttribute<Physics>().forces += sf::Vector2f(-mov_spd, 0);
+            }
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+                Player.getAttribute<Physics>().forces += sf::Vector2f(mov_spd, 0);
+            }
         }
 
+        //Update Objects
+        sf::Time elapsed_btwn_frames = clock.getElapsedTime();
+
+        Player.getAttribute<Physics>().updateSpeed(elapsed_btwn_frames);
+        Player.getAttribute<C_Shape>().updatePosition(Player.getAttribute<Physics>().speed, elapsed_btwn_frames);
+
+        clock.restart();
+
+        //Update Window
         window.clear();
-        window.draw(shape);
+        window.draw(Player.getAttribute<C_Shape>().getShape());
         window.display();
+
     }
 
     return 0;
-}
-*/
-int main() {
-    Entity Player;
-    Player.add_attribute<Vertex>();
-    std::cout << Player;
-    Player.get_attribute<Vertex>().log_position();
-
-
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

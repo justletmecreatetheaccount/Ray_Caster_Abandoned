@@ -138,6 +138,7 @@
   <ItemGroup>
     <ClInclude Include="Entities.h" />
     <ClInclude Include="Attributes.h" />
+    <ClInclude Include="ECS_Manager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
