@@ -1,6 +1,6 @@
+#include "./Header_Files/Attributes.h"
+#include "./Header_Files/Entities.h"
 #include <SFML/Graphics.hpp>
-#include "Attributes.h"
-#include "Entities.h"
 #include<SFML/System/Clock.hpp>
 
 int main()
