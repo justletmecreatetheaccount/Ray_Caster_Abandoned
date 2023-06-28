@@ -1,5 +1,5 @@
-#include "./Header_Files/Attributes.h"
-#include "./Header_Files/Entities.h"
+#include "./Header_Files/Attributes.hpp"
+#include "./Header_Files/Entities.hpp"
 #include <SFML/Graphics.hpp>
 #include<SFML/System/Clock.hpp>
 
@@ -16,7 +16,7 @@ int main()
 
     //Test player creations
     Entity Player;
-    int mov_spd = 10000;
+    int mov_spd = 1000;
     Player.addAttribute<Vertex>();
     Player.addAttribute<Physics>();
     Player.addAttribute<C_Shape>();

@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/C++/C++ Projects/Ray_Caster/build",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -DSFML_STATIC -isystem \"C:/C++/C++ Projects/Ray_Caster/Dependencies/SFML-2.6.0/include\" -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview -o CMakeFiles\\Ray_Caster.dir\\src\\Ray_Caster.cpp.obj -c \"C:\\C++\\C++ Projects\\Ray_Caster\\src\\Ray_Caster.cpp\"",
+  "file": "C:\\C++\\C++ Projects\\Ray_Caster\\src\\Ray_Caster.cpp",
+  "output": "CMakeFiles\\Ray_Caster.dir\\src\\Ray_Caster.cpp.obj"
+}
+]
