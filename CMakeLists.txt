@@ -12,6 +12,8 @@ include_directories(${SFML_INCLUDE_DIRS})
 
 set(SOURCES
     src/Ray_Caster.cpp
+    src/Entities.cpp
+    src/Attributes.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

@@ -11,35 +11,18 @@ struct Attribute {
 	virtual ~Attribute() {}
 };
 
-std::ostream& operator<<(std::ostream& stream, const Attribute& attribute) {
-	stream << typeid(attribute).name();
-	return stream;
-}
+std::ostream& operator<<(std::ostream& stream, const Attribute& attribute);
 
 struct Vertex : Attribute {
 	sf::Vector2f entity_position;
 
-	Vertex(int ID) {
-		entity_position = sf::Vector2f(0, 0);
-		Owner_ID = ID;
-	}
+	Vertex(int ID);
 
-	~Vertex() {
-	}
+	void logPosition();
 
-	void logPosition() {
-		std::cout << "Enitity " << int(Owner_ID) << " position : (" << entity_position.x << ", " << entity_position.y << ")" << "\n";
-	}
+	sf::Vector2f setPosition(sf::Vector2f pos);
 
-	sf::Vector2f setPosition(sf::Vector2f pos) {
-		entity_position = pos;
-		return entity_position;
-	}
-
-	sf::Vector2f updatePosition(sf::Vector2f speed, sf::Time dt) {
-		entity_position += speed * dt.asSeconds();
-		return entity_position;
-	}
+	sf::Vector2f updatePosition(sf::Vector2f speed, sf::Time dt);
 };
 
 struct C_Shape : Attribute {
@@ -48,31 +31,15 @@ struct C_Shape : Attribute {
 	bool has_shape = false;
 	bool has_link = false;
 
-	C_Shape(int ID) {
-		Owner_ID = ID;
-	}
+	C_Shape(int ID);
 
-	void giveShape(sf::CircleShape* shape) {
-		shape_ptr.reset(shape);
-		has_shape = true;
-	}
+	void giveShape(sf::CircleShape* shape);
 
-	void linkVertex(Vertex* vertex_ptr) {
-		linked_position_ptr.reset(vertex_ptr);
-		has_link = true;
-	}
+	void linkVertex(Vertex* vertex_ptr);
 
-	sf::CircleShape& getShape() {
-		return *shape_ptr;
-	}
+	sf::CircleShape& getShape();
 
-	bool updatePosition(sf::Vector2f speed, sf::Time dt) {
-		if (has_shape) {
-			(*shape_ptr).setPosition((*linked_position_ptr).updatePosition(speed, dt));
-			return true;
-		}
-		return false;
-	}
+	bool updatePosition(sf::Vector2f speed, sf::Time dt);
 };
 
 struct R_Shape : Attribute {
@@ -81,31 +48,15 @@ struct R_Shape : Attribute {
 	bool has_shape = false;
 	bool has_link = false;
 
-	R_Shape(int ID) {
-		Owner_ID = ID;
-	}
+	R_Shape(int ID);
 
-	void linkVertex(Vertex* vertex_ptr) {
-		linked_position_ptr.reset(vertex_ptr);
-		has_link = true;
-	}
+	void linkVertex(Vertex* vertex_ptr);
 
-	void giveShape(sf::RectangleShape shape) {
-		shape_ptr.reset(&shape);
-		has_shape = true;
-	}
+	void giveShape(sf::RectangleShape shape);
 
-	sf::RectangleShape& getShape() {
-		return *shape_ptr;
-	}
+	sf::RectangleShape& getShape();
 
-	bool updatePosition(sf::Vector2f speed, sf::Time dt) {
-		if (has_shape) {
-			(*shape_ptr).setPosition((*linked_position_ptr).updatePosition(speed, dt));
-			return true;
-		}
-		return false;
-	}
+	bool updatePosition(sf::Vector2f speed, sf::Time dt);
 };
 
 struct Physics : Attribute {
@@ -114,17 +65,7 @@ struct Physics : Attribute {
 	float friction;
 	int mass;
 
-	Physics(int ID) {
-		speed = sf::Vector2f(0, 0);
-		forces = sf::Vector2f(0, 0);
-		mass = 1;
-		friction = 0.9;
-		Owner_ID = ID;
-	}
+	Physics(int ID);
 
-	void updateSpeed(sf::Time dt) {
-		speed.x = speed.x + (forces.x / mass) * dt.asSeconds() - friction * speed.x * dt.asSeconds();
-		speed.y = speed.y + (forces.y / mass) * dt.asSeconds() - friction * speed.y * dt.asSeconds();
-		forces = sf::Vector2f(0, 0);
-	}
+	void updateSpeed(sf::Time dt);
 };
