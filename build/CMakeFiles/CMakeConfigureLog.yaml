@@ -59,8 +59,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-9ti0fe"
-      binary: "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-9ti0fe"
+      source: "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-1vis4q"
+      binary: "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-1vis4q"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-O0"
@@ -69,10 +69,10 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-9ti0fe
+        Change Dir: C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-1vis4q
         
-        Run Build Command(s):C:/PROGRA~1/Ninja/ninja.exe -v cmTC_718b3 && [1/2] C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE   -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview -MD -MT CMakeFiles/cmTC_718b3.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_718b3.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles/cmTC_718b3.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/vladd/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp
-        [2/2] cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -fuse-ld=lld-link -nostartfiles -nostdlib -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview -Xlinker /subsystem:console CMakeFiles/cmTC_718b3.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_718b3.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_718b3.lib -Xlinker /pdb:cmTC_718b3.pdb -Xlinker /version:0.0     && cd ."
+        Run Build Command(s):C:/PROGRA~1/Ninja/ninja.exe -v cmTC_2bde4 && [1/2] C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE   -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview -MD -MT CMakeFiles/cmTC_2bde4.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_2bde4.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles/cmTC_2bde4.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/vladd/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp
+        [2/2] cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -fuse-ld=lld-link -nostartfiles -nostdlib -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview -Xlinker /subsystem:console CMakeFiles/cmTC_2bde4.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_2bde4.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_2bde4.lib -Xlinker /pdb:cmTC_2bde4.pdb -Xlinker /version:0.0     && cd ."
         
       exitCode: 0
   -
@@ -87,8 +87,8 @@ events:
     checks:
       - "Detecting CXX compile features"
     directories:
-      source: "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-wkv0nj"
-      binary: "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-wkv0nj"
+      source: "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-alt542"
+      binary: "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-alt542"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-O0"
@@ -97,10 +97,10 @@ events:
       variable: "CMAKE_CXX_FEATURE_TEST"
       cached: true
       stdout: |
-        Change Dir: C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-wkv0nj
+        Change Dir: C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-alt542
         
-        Run Build Command(s):C:/PROGRA~1/Ninja/ninja.exe -v cmTC_308d3 && [1/2] C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE   -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview   -std=c++14 -MD -MT CMakeFiles/cmTC_308d3.dir/feature_tests.cxx.obj -MF CMakeFiles\\cmTC_308d3.dir\\feature_tests.cxx.obj.d -o CMakeFiles/cmTC_308d3.dir/feature_tests.cxx.obj -c "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-wkv0nj/feature_tests.cxx"
-        [2/2] cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -fuse-ld=lld-link -nostartfiles -nostdlib -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview -Xlinker /subsystem:console CMakeFiles/cmTC_308d3.dir/feature_tests.cxx.obj -o cmTC_308d3.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_308d3.lib -Xlinker /pdb:cmTC_308d3.pdb -Xlinker /version:0.0   -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames  && cd ."
+        Run Build Command(s):C:/PROGRA~1/Ninja/ninja.exe -v cmTC_8d45c && [1/2] C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE   -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview   -std=c++14 -MD -MT CMakeFiles/cmTC_8d45c.dir/feature_tests.cxx.obj -MF CMakeFiles\\cmTC_8d45c.dir\\feature_tests.cxx.obj.d -o CMakeFiles/cmTC_8d45c.dir/feature_tests.cxx.obj -c "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-alt542/feature_tests.cxx"
+        [2/2] cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -fuse-ld=lld-link -nostartfiles -nostdlib -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview -Xlinker /subsystem:console CMakeFiles/cmTC_8d45c.dir/feature_tests.cxx.obj -o cmTC_8d45c.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_8d45c.lib -Xlinker /pdb:cmTC_8d45c.pdb -Xlinker /version:0.0   -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames  && cd ."
         
       exitCode: 0
   -
@@ -115,8 +115,8 @@ events:
     checks:
       - "Detecting CXX compile features"
     directories:
-      source: "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-8j49p7"
-      binary: "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-8j49p7"
+      source: "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-gsjjwj"
+      binary: "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-gsjjwj"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-O0"
@@ -125,10 +125,10 @@ events:
       variable: "CMAKE_CXX_FEATURE_TEST"
       cached: true
       stdout: |
-        Change Dir: C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-8j49p7
+        Change Dir: C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-gsjjwj
         
-        Run Build Command(s):C:/PROGRA~1/Ninja/ninja.exe -v cmTC_decdb && [1/2] C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE   -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview   -std=c++14 -MD -MT CMakeFiles/cmTC_decdb.dir/feature_tests.cxx.obj -MF CMakeFiles\\cmTC_decdb.dir\\feature_tests.cxx.obj.d -o CMakeFiles/cmTC_decdb.dir/feature_tests.cxx.obj -c "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-8j49p7/feature_tests.cxx"
-        [2/2] cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -fuse-ld=lld-link -nostartfiles -nostdlib -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview -Xlinker /subsystem:console CMakeFiles/cmTC_decdb.dir/feature_tests.cxx.obj -o cmTC_decdb.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_decdb.lib -Xlinker /pdb:cmTC_decdb.pdb -Xlinker /version:0.0   -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames  && cd ."
+        Run Build Command(s):C:/PROGRA~1/Ninja/ninja.exe -v cmTC_520bd && [1/2] C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE   -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview   -std=c++14 -MD -MT CMakeFiles/cmTC_520bd.dir/feature_tests.cxx.obj -MF CMakeFiles\\cmTC_520bd.dir\\feature_tests.cxx.obj.d -o CMakeFiles/cmTC_520bd.dir/feature_tests.cxx.obj -c "C:/C++/C++ Projects/Ray_Caster/build/CMakeFiles/CMakeScratch/TryCompile-gsjjwj/feature_tests.cxx"
+        [2/2] cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -fuse-ld=lld-link -nostartfiles -nostdlib -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview -Xlinker /subsystem:console CMakeFiles/cmTC_520bd.dir/feature_tests.cxx.obj -o cmTC_520bd.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_520bd.lib -Xlinker /pdb:cmTC_520bd.pdb -Xlinker /version:0.0   -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames  && cd ."
         
       exitCode: 0
 ...
