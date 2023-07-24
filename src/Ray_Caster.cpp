@@ -1,10 +1,42 @@
 #include "./Header_Files/Attributes.hpp"
+#include "./Header_Files/Custom_Attributes.hpp"
 #include "./Header_Files/Entities.hpp"
 #include <SFML/Graphics.hpp>
 #include<SFML/System/Clock.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <opencv2/core.hpp>
+#include <opencv2/highgui.hpp>
+#include <future>
+#include <iostream>
 
 int main()
 {
+    std::cout<<"Started ...\n";
+
+    /*
+    cv::Mat image = cv::imread("C:/Users/vladd/OneDrive/Images/821995c.jpg", cv::IMREAD_COLOR);
+    // Error Handling
+    if (image.empty()) {
+        std::cout << "Image File "
+             << "Not Found" << std::endl;
+  
+        // wait for any key press
+        std::cin.get();
+        return -1;
+    }
+
+    // Show Image inside a window with
+    // the name provided
+    cv::imshow("Window Name", image);
+    cv::waitKey(0);
+    */
+
+    std::string image_path = "C:/Users/vladd/OneDrive/Images/821995c.jpg";
+    cv::Mat img = imread(image_path, cv::IMREAD_COLOR);
+
+    imshow("Display window", img);
+    int k = cv::waitKey(0);
+
     //Window settings definition
     sf::ContextSettings settings_main;
     settings_main.antialiasingLevel = 8;
@@ -16,14 +48,11 @@ int main()
 
     //Test player creations
     Entity Player;
-    int mov_spd = 1000;
-    Player.addAttribute<Vertex>();
-    Player.addAttribute<Physics>();
-    Player.addAttribute<C_Shape>();
-    Player.getAttribute<C_Shape>().giveShape(new sf::CircleShape(25.f, 3));
-    Player.getAttribute<C_Shape>().getShape().setFillColor(sf::Color::Green);
-    Player.getAttribute<C_Shape>().linkVertex(&Player.getAttribute<Vertex>());
+    int mov_spd = 100;
 
+    Player.addAttribute<DynamicObject>(10, sf::Vector2f(), 1000);
+    Player.addAttribute<CircleShape>(25.0, 3);
+    Player.getAttribute<DynamicObject>().linkShape(Player.getAttribute<CircleShape>());
     //Main loop
     while (window.isOpen())
     {
@@ -31,54 +60,40 @@ int main()
         sf::Event event;
         while (window.pollEvent(event))
         {
-            switch (event.type) {
-            case sf::Event::Closed :
+            if (event.type == sf::Event::Closed) {
                 window.close();
-                break;
             }
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
-                Player.getAttribute<Physics>().forces += sf::Vector2f(0, -mov_spd);
+                Player.getAttribute<DynamicObject>().speed.y += -mov_spd;
             }
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-                Player.getAttribute<Physics>().forces += sf::Vector2f(0, mov_spd);
+                Player.getAttribute<DynamicObject>().speed.y += mov_spd;
             }
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-                Player.getAttribute<Physics>().forces += sf::Vector2f(-mov_spd, 0);
+                Player.getAttribute<DynamicObject>().speed.x += -mov_spd;
             }
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-                Player.getAttribute<Physics>().forces += sf::Vector2f(mov_spd, 0);
+                Player.getAttribute<DynamicObject>().speed.x += mov_spd;
             }
         }
 
         //Update Objects
         sf::Time elapsed_btwn_frames = clock.getElapsedTime();
-
-        Player.getAttribute<Physics>().updateSpeed(elapsed_btwn_frames);
-        Player.getAttribute<C_Shape>().updatePosition(Player.getAttribute<Physics>().speed, elapsed_btwn_frames);
+        
+        Player.getAttribute<DynamicObject>().updateObject(elapsed_btwn_frames.asSeconds());
 
         clock.restart();
 
         //Update Window
         window.clear();
-        window.draw(Player.getAttribute<C_Shape>().getShape());
+        window.draw(Player.getAttribute<CircleShape>());
         window.display();
 
     }
 
     return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
