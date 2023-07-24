@@ -1,5 +1,0 @@
-# ninja log v5
-7	501	7097761118119624	CMakeFiles/Ray_Caster.dir/src/Ray_Caster.cpp.obj	9be8bdae85e13512
-519	685	7097761119595824	Ray_Caster.exe	d6096119df089b31
-11	518	7097761118189643	CMakeFiles/Ray_Caster.dir/src/Entities.cpp.obj	bd848dbf1e82b773
-10	549	7097735186658632	CMakeFiles/Ray_Caster.dir/src/Attributes.cpp.obj	4cfb026697dab53a
